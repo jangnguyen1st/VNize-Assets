@@ -1,4 +1,4 @@
-@echo off
+﻿@echo off
 chcp 65001 >nul
 title [VNize-Assets] Git Auto Push Tool
 color 0B
