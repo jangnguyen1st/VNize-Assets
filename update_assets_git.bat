@@ -1,10 +1,10 @@
-﻿@echo off
+@echo off
 chcp 65001 >nul
 title [VNize-Assets] Git Auto Push Tool
 color 0B
 
 echo =======================================================
-echo           TỰ ĐỘNG ĐẨY ẢNH LOGO LÊN GITHUB
+echo           TỰ ĐỘNG ĐẨY DỮ LIỆU LÊN GITHUB
 echo =======================================================
 echo.
 
@@ -13,10 +13,10 @@ echo [1/5] Kiểm tra các tệp tin thay đổi...
 git status -s
 echo.
 
-:: 2. Nhập nội dung commit (hoặc dùng mặc định nếu để trống)
+:: 2. Nhập nội dung commit
 set "commit_msg="
-set /p commit_msg=">> Nhập ghi chú commit (Nhấn Enter để dùng mặc định 'Update game logos'): "
-if "%commit_msg%"=="" set "commit_msg=Update game logos"
+set /p commit_msg=">> Nhập ghi chú commit (Nhấn Enter để dùng mặc định 'Update VNize assets'): "
+if "%commit_msg%"=="" set "commit_msg=Update VNize assets"
 
 echo.
 echo [2/5] Đang thêm các tệp tin mới (git add)...
@@ -34,7 +34,6 @@ if %ERRORLEVEL% NEQ 0 (
     echo.
     echo =======================================================
     echo   ❌ XUNG ĐỘT DỮ LIỆU HOẶC KHÔNG THỂ KÉO CODE VỀ!
-    echo   Vui lòng kiểm tra lại kết nối mạng hoặc conflict.
     echo =======================================================
     pause
     exit /b %ERRORLEVEL%
@@ -48,7 +47,7 @@ echo.
 if %ERRORLEVEL% EQU 0 (
     color 0A
     echo =======================================================
-    echo      🎉 ĐÃ ĐẨY ẢNH LÊN GITHUB THÀNH CÔNG!
+    echo      🎉 ĐÃ ĐẨY LÊN GITHUB THÀNH CÔNG!
     echo =======================================================
 ) else (
     color 0C
